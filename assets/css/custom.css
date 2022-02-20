@@ -68,9 +68,13 @@ meter {
   -webkit-user-drag: element;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: 'Kanit', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: #333;
   background-color: #fff;
@@ -79,13 +83,15 @@ body {
 h1 {
   font-weight: 700;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   margin-bottom: 25px;
+  color: red;
 }
 
 h1 span:nth-child(odd) {
   display: inline-block;
   transform: rotate(10deg);
+  color: green;
 }
 
 .container {
@@ -100,10 +106,83 @@ button {
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 400;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   width: 100%;
   text-align: center;
+  margin-bottom: 30px;
+}
+
+.tile {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.letter {
+  display: block;
+  font-size: 10rem;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
+  text-align: center;
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+}
+
+.details {
+  grid-column: span 2;
+  background-color: #ebfeeb;
+  border-radius: 10px;
+  padding: 5px 20px;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.description {
+  font-size: 2rem;
+}
+
+.history h2 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.history-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  gap: 20px;
+  overflow-x: scroll;
+  padding: 10px;
+  grid-auto-columns: 110px;
+}
+
+.history-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f0f0f0;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.history-list .letter {
+  font-size: 4rem;
+}
+
+.history-list .image {
+  width: 50px;
 }
