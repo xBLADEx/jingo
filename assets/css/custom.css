@@ -1,0 +1,109 @@
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property - The "symbol *" part is to solve Firefox SVG sprite bug */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  all: unset;
+}
+
+/* fix the feature of 'hidden' attribute. display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable='true']) {
+  -webkit-user-drag: element;
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+}
+
+h1 {
+  font-weight: 700;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+}
+
+h1 span:nth-child(odd) {
+  display: inline-block;
+  transform: rotate(10deg);
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+button {
+  border: none;
+  background-color: green;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  text-align: center;
+}
