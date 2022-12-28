@@ -118,9 +118,9 @@ button {
 .tile {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 150px 85px;
   gap: 20px;
   align-items: center;
-  justify-content: center;
   margin-bottom: 50px;
 }
 
@@ -154,9 +154,20 @@ button {
   font-size: 2rem;
 }
 
+.history header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .history h2 {
   font-weight: 700;
   font-size: 2rem;
+}
+
+.history p {
+  font-weight: 400;
+  font-size: 1.6rem;
 }
 
 .history-list {
@@ -185,4 +196,5 @@ button {
 
 .history-list .image {
   width: 50px;
+  height: auto;
 }
