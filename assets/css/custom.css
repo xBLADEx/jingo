@@ -140,7 +140,7 @@ button {
 
 .details {
   grid-column: span 2;
-  background-color: #ebfeeb;
+  background-color: #dfdfdf;
   border-radius: 10px;
   padding: 5px 20px;
 }
