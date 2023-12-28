@@ -7,6 +7,20 @@ let totalPossibilities = possibilities.length + history.length;
 const draw = document.querySelector('#js-draw');
 const tileResult = document.querySelector('#js-tile');
 const historyElement = document.querySelector('#js-history');
+const hiddenReset = document.querySelector('#js-reset');
+let tapCounter = 0;
+
+hiddenReset.addEventListener('click', () => {
+  tapCounter += 1;
+
+  if (tapCounter >= 5) {
+    window.localStorage.removeItem('possibilities');
+    window.localStorage.removeItem('history');
+    historyElement.innerHTML = '';
+    tileResult.innerHTML = '';
+    tapCounter = 0;
+  }
+});
 
 function generateTiles() {
   letters.forEach((letter) => {
